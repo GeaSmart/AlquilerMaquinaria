@@ -13,7 +13,7 @@ namespace AlquilerMaquinaria.Mantenedores
 {
     public partial class frmCliente : Form
     {
-        AlquilerMaquinariaContext context = new AlquilerMaquinariaContext();
+        //AlquilerMaquinariaContext context = new AlquilerMaquinariaContext();
         CLIENTE model = new CLIENTE();
         public frmCliente()
         {
@@ -32,7 +32,14 @@ namespace AlquilerMaquinaria.Mantenedores
                 direccion = this.txtDireccion.Text,
                 observaciones = this.txtObservaciones.Text
             };
-            model.Guardar(cliente);
+            var response = model.Guardar(cliente);
+
+            MessageBox.Show(response.Message);            
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace AlquilerMaquinaria
@@ -13,9 +16,13 @@ namespace AlquilerMaquinaria
         [STAThread]
         static void Main()
         {
+            //CultureInfo culture = new CultureInfo(ConfigurationManager.AppSettings["DefaultCulture"]);
+            //Thread.CurrentThread.CurrentCulture = culture;
+            //Thread.CurrentThread.CurrentUICulture = culture;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Mantenedores.frmCliente());
+            Application.Run(new Mantenedores.frmListaClientes());
         }
     }
 }

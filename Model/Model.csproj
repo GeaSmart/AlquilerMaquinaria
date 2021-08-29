@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="Models\ADJUNTO.cs" />
     <Compile Include="Models\AlquilerMaquinariaContext.cs" />
     <Compile Include="Models\CLIENTE.cs" />
@@ -56,10 +57,12 @@
     <Compile Include="Models\DETALLE_CONTRATO.cs" />
     <Compile Include="Models\MAQUINARIA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\ResponseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
