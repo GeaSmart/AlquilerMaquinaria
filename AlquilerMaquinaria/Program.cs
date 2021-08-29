@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlquilerMaquinaria.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
@@ -16,12 +17,12 @@ namespace AlquilerMaquinaria
         [STAThread]
         static void Main()
         {
-            //CultureInfo culture = new CultureInfo(ConfigurationManager.AppSettings["DefaultCulture"]);
-            //Thread.CurrentThread.CurrentCulture = culture;
-            //Thread.CurrentThread.CurrentUICulture = culture;
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //configuracion de automapper
+            AutomapperConfiguration.Configure();
+
             Application.Run(new Mantenedores.frmListaClientes());
         }
     }

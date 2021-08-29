@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Model.DTO
 {
-    class ClienteDTO
+    public class ClienteDTO
     {
+
     }
 }

@@ -1,4 +1,7 @@
-﻿using Model.Models;
+﻿using AutoMapper;
+using Model.DTO;
+using Model.Models;
+using Model.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +29,9 @@ namespace AlquilerMaquinaria.Mantenedores
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.dgvListado.DataSource = model.Listar().data;
+            ResponseModel<List<CLIENTE>> resp = model.Listar();
+            this.dgvListado.DataSource = Mapper.Map<List<ListadoClienteDTO>>(resp.data);
+            MessageBox.Show(resp.Message);
         }
     }
 }
