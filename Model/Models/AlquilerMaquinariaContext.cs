@@ -79,23 +79,23 @@ namespace Model.Models
                 .Property(e => e.monto_adicionales)
                 .HasPrecision(10, 2);
 
-            //modelBuilder.Entity<CONTRATO>()
-            //    .HasMany(e => e.DETALLE_CONTRATO)
-            //    .WithRequired(e => e.CONTRATO)
-            //    .HasForeignKey(e => e.idContrato)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CONTRATO>()
+                .HasMany(e => e.DETALLE_CONTRATO)
+                .WithRequired(e => e.CONTRATO)
+                .HasForeignKey(e => e.idContrato)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<DETALLE_CONTRATO>()
-            //    .Property(e => e.monto_precio_dia)
-            //    .HasPrecision(10, 2);
+            modelBuilder.Entity<DETALLE_CONTRATO>()
+                .Property(e => e.monto_precio_dia)
+                .HasPrecision(10, 2);
 
-            //modelBuilder.Entity<DETALLE_CONTRATO>()
-            //    .Property(e => e.monto_subtotal)
-            //    .HasPrecision(10, 2);
+            modelBuilder.Entity<DETALLE_CONTRATO>()
+                .Property(e => e.monto_subtotal)
+                .HasPrecision(10, 2);
 
-            //modelBuilder.Entity<DETALLE_CONTRATO>()
-            //    .Property(e => e.monto_descuento)
-            //    .HasPrecision(10, 2);
+            modelBuilder.Entity<DETALLE_CONTRATO>()
+                .Property(e => e.monto_descuento)
+                .HasPrecision(10, 2);
 
             modelBuilder.Entity<MAQUINARIA>()
                 .Property(e => e.equipo)
@@ -121,11 +121,11 @@ namespace Model.Models
                 .Property(e => e.precio_dia_defecto)
                 .HasPrecision(10, 2);
 
-        //    modelBuilder.Entity<MAQUINARIA>()
-        //        .HasMany(e => e.DETALLE_CONTRATO)
-        //        .WithRequired(e => e.MAQUINARIA)
-        //        .HasForeignKey(e => e.idMaquinaria)
-        //        .WillCascadeOnDelete(false);
+            modelBuilder.Entity<MAQUINARIA>()
+                .HasMany(e => e.DETALLE_CONTRATO)
+                .WithRequired(e => e.MAQUINARIA)
+                .HasForeignKey(e => e.idMaquinaria)
+                .WillCascadeOnDelete(false);
         }
     }
 }

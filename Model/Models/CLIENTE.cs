@@ -66,7 +66,7 @@ namespace Model.Models
             {
                 response.data = context.CLIENTEs.ToList();
                 response.Response = true;
-                response.Message = "El cliente fue guardado exitosamente.";
+                response.Message = "";
             }
             catch (DbEntityValidationException ex)
             {
