@@ -66,7 +66,38 @@ namespace Model.Models
             {
                 response.data = context.CLIENTEs.ToList();
                 response.Response = true;
-                response.Message = "";
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var error in ex.EntityValidationErrors)
+                {
+                    foreach (var item in error.ValidationErrors)
+                    {
+                        sb.Append(item.ErrorMessage);
+                        sb.Append("\r\n");
+                    }
+                }
+                response.Response = false;
+                response.Message = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                response.Response = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public ResponseModel<CLIENTE> Obtener(int id)
+        {
+            context = new AlquilerMaquinariaContext();
+            var response = new ResponseModel<CLIENTE>();
+
+            try
+            {
+                response.data = context.CLIENTEs.FirstOrDefault(x=>x.id==id);
+                response.Response = true;
             }
             catch (DbEntityValidationException ex)
             {
@@ -96,8 +127,16 @@ namespace Model.Models
             var response = new ResponseModel<int>();
             
             try
-            {
-                context.CLIENTEs.Add(cliente);
+            {                
+                if (cliente.id > 0)
+                {
+                    context.Entry(cliente).State = System.Data.Entity.EntityState.Modified;                       
+                }
+                else
+                {
+                    context.CLIENTEs.Add(cliente);
+                }
+                
                 context.SaveChanges();
                 response.Response = true;
                 response.Message = "El cliente fue guardado exitosamente.";

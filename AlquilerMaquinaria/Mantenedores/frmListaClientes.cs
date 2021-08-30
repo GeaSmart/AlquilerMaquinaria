@@ -24,14 +24,28 @@ namespace AlquilerMaquinaria.Mantenedores
 
         private void frmListaClientes_Load(object sender, EventArgs e)
         {
-            this.dgvListado.DataSource = model.Listar();
+            actualizarGrilla();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ResponseModel<List<CLIENTE>> resp = model.Listar();
-            this.dgvListado.DataSource = Mapper.Map<List<ListadoClienteDTO>>(resp.data);
-            MessageBox.Show(resp.Message);
+            int id = Convert.ToInt32(this.dgvListado.CurrentRow.Cells["id"].Value.ToString());
+            frmCliente formulario = new frmCliente(id);
+            formulario.ShowDialog();
+            actualizarGrilla();
+            //MessageBox.Show(id.ToString());
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmCliente formulario = new frmCliente();
+            formulario.ShowDialog();
+        }
+
+        private void actualizarGrilla()
+        {
+            ResponseModel<List<CLIENTE>> response = model.Listar();
+            this.dgvListado.DataSource = Mapper.Map<List<ListadoClienteDTO>>(response.data);
         }
     }
 }

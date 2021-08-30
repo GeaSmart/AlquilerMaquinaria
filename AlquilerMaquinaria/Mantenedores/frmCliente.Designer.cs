@@ -46,13 +46,18 @@ namespace AlquilerMaquinaria.Mantenedores
             this.label7 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(531, 457);
+            this.btnGuardar.Location = new System.Drawing.Point(523, 471);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 40);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -61,22 +66,25 @@ namespace AlquilerMaquinaria.Mantenedores
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 86);
+            this.label1.Location = new System.Drawing.Point(88, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
+            this.label1.Visible = false;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(167, 83);
+            this.txtId.Location = new System.Drawing.Point(125, 11);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 2;
+            this.txtId.Text = "0";
+            this.txtId.Visible = false;
             // 
             // txtDniRuc
             // 
-            this.txtDniRuc.Location = new System.Drawing.Point(167, 111);
+            this.txtDniRuc.Location = new System.Drawing.Point(125, 39);
             this.txtDniRuc.Name = "txtDniRuc";
             this.txtDniRuc.Size = new System.Drawing.Size(100, 22);
             this.txtDniRuc.TabIndex = 4;
@@ -84,7 +92,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 114);
+            this.label2.Location = new System.Drawing.Point(45, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 3;
@@ -92,7 +100,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtNombresRazon
             // 
-            this.txtNombresRazon.Location = new System.Drawing.Point(167, 139);
+            this.txtNombresRazon.Location = new System.Drawing.Point(125, 67);
             this.txtNombresRazon.Name = "txtNombresRazon";
             this.txtNombresRazon.Size = new System.Drawing.Size(274, 22);
             this.txtNombresRazon.TabIndex = 6;
@@ -100,7 +108,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 142);
+            this.label3.Location = new System.Drawing.Point(44, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 5;
@@ -108,7 +116,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(167, 167);
+            this.txtApellidos.Location = new System.Drawing.Point(125, 95);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(274, 22);
             this.txtApellidos.TabIndex = 8;
@@ -116,7 +124,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 170);
+            this.label4.Location = new System.Drawing.Point(44, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 7;
@@ -124,7 +132,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(167, 195);
+            this.txtTelefono.Location = new System.Drawing.Point(125, 123);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 22);
             this.txtTelefono.TabIndex = 10;
@@ -132,7 +140,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 198);
+            this.label5.Location = new System.Drawing.Point(45, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 9;
@@ -140,7 +148,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(167, 223);
+            this.txtCelular.Location = new System.Drawing.Point(125, 151);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 22);
             this.txtCelular.TabIndex = 12;
@@ -148,7 +156,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 226);
+            this.label6.Location = new System.Drawing.Point(57, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 11;
@@ -156,7 +164,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(167, 251);
+            this.txtDireccion.Location = new System.Drawing.Point(125, 179);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(439, 22);
             this.txtDireccion.TabIndex = 14;
@@ -164,7 +172,7 @@ namespace AlquilerMaquinaria.Mantenedores
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 254);
+            this.label7.Location = new System.Drawing.Point(42, 182);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 13;
@@ -172,48 +180,81 @@ namespace AlquilerMaquinaria.Mantenedores
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(167, 279);
+            this.txtObservaciones.Location = new System.Drawing.Point(125, 207);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(439, 136);
+            this.txtObservaciones.Size = new System.Drawing.Size(439, 188);
             this.txtObservaciones.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 282);
+            this.label8.Location = new System.Drawing.Point(6, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 17);
             this.label8.TabIndex = 15;
             this.label8.Text = "Observaciones";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(602, 453);
+            this.tabControl1.TabIndex = 17;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.txtObservaciones);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.txtId);
+            this.tabPage1.Controls.Add(this.txtDireccion);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtDniRuc);
+            this.tabPage1.Controls.Add(this.txtCelular);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtNombresRazon);
+            this.tabPage1.Controls.Add(this.txtTelefono);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtApellidos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(594, 424);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Información personal";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(594, 424);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Archivos adjuntos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 559);
-            this.Controls.Add(this.txtObservaciones);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCelular);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNombresRazon);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDniRuc);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(624, 523);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnGuardar);
             this.Name = "frmCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -236,5 +277,8 @@ namespace AlquilerMaquinaria.Mantenedores
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
