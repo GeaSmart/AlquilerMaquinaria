@@ -163,6 +163,41 @@ namespace Model.Models
             return response;
         }
 
+        public ResponseModel<int> Eliminar(int id)
+        {
+            context = new AlquilerMaquinariaContext();
+            var response = new ResponseModel<int>();
 
+            try
+            {
+                var client = new CLIENTE { id = id };
+                
+                context.CLIENTEs.Attach(client);
+                context.CLIENTEs.Remove(client);                
+                context.SaveChanges();
+                response.Response = true;
+                response.Message = "El cliente fue eliminado.";
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var error in ex.EntityValidationErrors)
+                {
+                    foreach (var item in error.ValidationErrors)
+                    {
+                        sb.Append(item.ErrorMessage);
+                        sb.Append("\r\n");
+                    }
+                }
+                response.Response = false;
+                response.Message = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                response.Response = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
     }
 }

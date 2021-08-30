@@ -53,6 +53,7 @@ namespace AlquilerMaquinaria.Mantenedores
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
+            this.btnEliminar.Visible = false;
             if (id > 0)
             {
                 ResponseModel<CLIENTE> response = model.Obtener(id);
@@ -68,7 +69,17 @@ namespace AlquilerMaquinaria.Mantenedores
                 this.txtObservaciones.Text = clienteDTO.observaciones;
 
                 this.btnGuardar.Text = "Actualizar";
+                this.btnEliminar.Visible = true;
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var response = model.Eliminar(Convert.ToInt32(this.txtId.Text));
+            MessageBox.Show(response.Message);
+
+            if (response.Response)
+                this.Close();
         }
     }
 }
