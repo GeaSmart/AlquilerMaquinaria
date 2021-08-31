@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="DTO\ListadoClienteDTO.cs" />
+    <Compile Include="DTO\ListadoMaquinariaDTO.cs" />
+    <Compile Include="DTO\MaquinariaDTO.cs" />
     <Compile Include="Models\ADJUNTO.cs" />
     <Compile Include="Models\AlquilerMaquinariaContext.cs" />
     <Compile Include="Models\CLIENTE.cs" />

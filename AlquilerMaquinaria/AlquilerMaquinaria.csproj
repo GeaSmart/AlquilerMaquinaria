@@ -95,6 +95,18 @@
     <Compile Include="Mantenedores\frmListaClientes.Designer.cs">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedores\frmListaMaquinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\frmListaMaquinaria.Designer.cs">
+      <DependentUpon>frmListaMaquinaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\frmMaquinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\frmMaquinaria.Designer.cs">
+      <DependentUpon>frmMaquinaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -105,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\frmListaClientes.resx">
       <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\frmListaMaquinaria.resx">
+      <DependentUpon>frmListaMaquinaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\frmMaquinaria.resx">
+      <DependentUpon>frmMaquinaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
