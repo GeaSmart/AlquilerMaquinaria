@@ -1,437 +1,222 @@
 USE [master]
-
 GO
-
-/****** Object:  Database [AlquilerMaquinaria]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Database [AlquilerMaquinaria]    Script Date: 8/30/2021 11:54:40 PM ******/
 CREATE DATABASE [AlquilerMaquinaria]
-
  CONTAINMENT = NONE
-
  ON  PRIMARY 
-
 ( NAME = N'AlquilerMaquinaria', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\AlquilerMaquinaria.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
-
  LOG ON 
-
 ( NAME = N'AlquilerMaquinaria_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\AlquilerMaquinaria_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET COMPATIBILITY_LEVEL = 110
-
 GO
-
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-
 begin
-
 EXEC [AlquilerMaquinaria].[dbo].[sp_fulltext_database] @action = 'enable'
-
 end
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ANSI_NULL_DEFAULT OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ANSI_NULLS OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ANSI_PADDING OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ANSI_WARNINGS OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ARITHABORT OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET AUTO_CLOSE OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET AUTO_CREATE_STATISTICS ON 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET AUTO_SHRINK OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET AUTO_UPDATE_STATISTICS ON 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET CURSOR_CLOSE_ON_COMMIT OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET CURSOR_DEFAULT  GLOBAL 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET CONCAT_NULL_YIELDS_NULL OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET NUMERIC_ROUNDABORT OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET QUOTED_IDENTIFIER OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET RECURSIVE_TRIGGERS OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET  DISABLE_BROKER 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET DATE_CORRELATION_OPTIMIZATION OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET TRUSTWORTHY OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET PARAMETERIZATION SIMPLE 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET READ_COMMITTED_SNAPSHOT OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET HONOR_BROKER_PRIORITY OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET RECOVERY FULL 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET  MULTI_USER 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET PAGE_VERIFY CHECKSUM  
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET DB_CHAINING OFF 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET TARGET_RECOVERY_TIME = 0 SECONDS 
-
 GO
-
 USE [AlquilerMaquinaria]
-
 GO
-
-/****** Object:  Table [dbo].[ADJUNTOS]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Table [dbo].[ADJUNTOS]    Script Date: 8/30/2021 11:54:40 PM ******/
 SET ANSI_NULLS ON
-
 GO
-
 SET QUOTED_IDENTIFIER ON
-
 GO
-
 SET ANSI_PADDING ON
-
 GO
-
 CREATE TABLE [dbo].[ADJUNTOS](
-
 	[id] [int] IDENTITY(1,1) NOT NULL,
-
 	[descripcion] [varchar](150) NOT NULL,
-
 	[ruta] [varchar](150) NOT NULL,
-
 	[idCliente] [int] NULL,
-
  CONSTRAINT [PK_ADJUNTOS] PRIMARY KEY CLUSTERED 
-
 (
-
 	[id] ASC
-
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-
 ) ON [PRIMARY]
 
-
 GO
-
 SET ANSI_PADDING OFF
-
 GO
-
-/****** Object:  Table [dbo].[CLIENTE]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Table [dbo].[CLIENTE]    Script Date: 8/30/2021 11:54:40 PM ******/
 SET ANSI_NULLS ON
-
 GO
-
 SET QUOTED_IDENTIFIER ON
-
 GO
-
 SET ANSI_PADDING ON
-
 GO
-
 CREATE TABLE [dbo].[CLIENTE](
-
 	[id] [int] IDENTITY(1,1) NOT NULL,
-
 	[dni_ruc] [varchar](11) NOT NULL,
-
 	[nombres_razonsocial] [varchar](75) NOT NULL,
-
 	[apellidos] [varchar](75) NULL,
-
 	[telefono] [varchar](50) NULL,
-
 	[celular] [varchar](50) NOT NULL,
-
 	[direccion] [varchar](150) NOT NULL,
-
 	[observaciones] [varchar](500) NULL,
-
  CONSTRAINT [PK_CLIENTE] PRIMARY KEY CLUSTERED 
-
 (
-
 	[id] ASC
-
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-
 ) ON [PRIMARY]
 
-
 GO
-
 SET ANSI_PADDING OFF
-
 GO
-
-/****** Object:  Table [dbo].[CONTRATO]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Table [dbo].[CONTRATO]    Script Date: 8/30/2021 11:54:40 PM ******/
 SET ANSI_NULLS ON
-
 GO
-
 SET QUOTED_IDENTIFIER ON
-
 GO
-
 SET ANSI_PADDING ON
-
 GO
-
 CREATE TABLE [dbo].[CONTRATO](
-
 	[id] [int] NOT NULL,
-
 	[fecha_inicio] [datetime] NOT NULL,
-
 	[fecha_fin] [datetime] NOT NULL,
-
 	[direccion] [varchar](150) NOT NULL,
-
 	[isCombustible] [int] NULL,
-
 	[isTransporte] [int] NULL,
-
 	[observaciones] [varchar](500) NULL,
-
 	[idCliente] [int] NOT NULL,
-
 	[monto_adicionales] [decimal](10, 2) NULL,
-
  CONSTRAINT [PK_CONTRATO] PRIMARY KEY CLUSTERED 
-
 (
-
 	[id] ASC
-
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-
 ) ON [PRIMARY]
 
-
 GO
-
 SET ANSI_PADDING OFF
-
 GO
-
-/****** Object:  Table [dbo].[DETALLE_CONTRATO]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Table [dbo].[DETALLE_CONTRATO]    Script Date: 8/30/2021 11:54:40 PM ******/
 SET ANSI_NULLS ON
-
 GO
-
 SET QUOTED_IDENTIFIER ON
-
 GO
-
 CREATE TABLE [dbo].[DETALLE_CONTRATO](
-
 	[idContrato] [int] NOT NULL,
-
 	[idMaquinaria] [int] NOT NULL,
-
 	[numero_dias] [int] NOT NULL,
-
 	[horas_uso_total_mtto] [int] NOT NULL,
-
 	[monto_precio_dia] [decimal](10, 2) NOT NULL,
-
 	[monto_subtotal] [decimal](10, 2) NULL,
-
 	[monto_descuento] [decimal](10, 2) NULL,
-
  CONSTRAINT [PK_DETALLE_CONTRATO] PRIMARY KEY CLUSTERED 
-
 (
-
 	[idContrato] ASC,
-
 	[idMaquinaria] ASC
-
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-
 ) ON [PRIMARY]
 
-
 GO
-
-/****** Object:  Table [dbo].[MAQUINARIA]    Script Date: 8/29/2021 10:52:29 PM ******/
-
+/****** Object:  Table [dbo].[MAQUINARIA]    Script Date: 8/30/2021 11:54:40 PM ******/
 SET ANSI_NULLS ON
-
 GO
-
 SET QUOTED_IDENTIFIER ON
-
 GO
-
 SET ANSI_PADDING ON
-
 GO
-
 CREATE TABLE [dbo].[MAQUINARIA](
-
 	[id] [int] IDENTITY(1,1) NOT NULL,
-
 	[equipo] [varchar](150) NOT NULL,
-
 	[numero_serie] [varchar](50) NOT NULL,
-
 	[marca] [varchar](50) NOT NULL,
-
 	[modelo] [varchar](50) NOT NULL,
-
 	[estado] [varchar](50) NOT NULL,
-
 	[fecha_compra] [datetime] NOT NULL,
-
 	[ciclo_horas_mtto] [int] NOT NULL,
-
 	[horas_alquiler_defecto] [int] NOT NULL,
-
 	[precio_dia_defecto] [decimal](10, 2) NOT NULL,
-
+	[observaciones] [varchar](500) NULL,
  CONSTRAINT [PK_MAQUINARIA] PRIMARY KEY CLUSTERED 
-
 (
-
 	[id] ASC
-
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-
 ) ON [PRIMARY]
 
-
 GO
-
 SET ANSI_PADDING OFF
-
 GO
-
 ALTER TABLE [dbo].[ADJUNTOS]  WITH CHECK ADD  CONSTRAINT [FK_ADJUNTOS_CLIENTE] FOREIGN KEY([idCliente])
-
 REFERENCES [dbo].[CLIENTE] ([id])
-
 GO
-
 ALTER TABLE [dbo].[ADJUNTOS] CHECK CONSTRAINT [FK_ADJUNTOS_CLIENTE]
-
 GO
-
 ALTER TABLE [dbo].[CONTRATO]  WITH CHECK ADD  CONSTRAINT [FK_CONTRATO_CLIENTE] FOREIGN KEY([idCliente])
-
 REFERENCES [dbo].[CLIENTE] ([id])
-
 GO
-
 ALTER TABLE [dbo].[CONTRATO] CHECK CONSTRAINT [FK_CONTRATO_CLIENTE]
-
 GO
-
 ALTER TABLE [dbo].[DETALLE_CONTRATO]  WITH CHECK ADD  CONSTRAINT [FK_DETALLE_CONTRATO_CONTRATO] FOREIGN KEY([idContrato])
-
 REFERENCES [dbo].[CONTRATO] ([id])
-
 GO
-
 ALTER TABLE [dbo].[DETALLE_CONTRATO] CHECK CONSTRAINT [FK_DETALLE_CONTRATO_CONTRATO]
-
 GO
-
 ALTER TABLE [dbo].[DETALLE_CONTRATO]  WITH CHECK ADD  CONSTRAINT [FK_DETALLE_CONTRATO_MAQUINARIA] FOREIGN KEY([idMaquinaria])
-
 REFERENCES [dbo].[MAQUINARIA] ([id])
-
 GO
-
 ALTER TABLE [dbo].[DETALLE_CONTRATO] CHECK CONSTRAINT [FK_DETALLE_CONTRATO_MAQUINARIA]
-
 GO
-
 USE [master]
-
 GO
-
 ALTER DATABASE [AlquilerMaquinaria] SET  READ_WRITE 
-
 GO
-
