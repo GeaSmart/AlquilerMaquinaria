@@ -55,8 +55,9 @@ namespace Model.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTRATO> CONTRATOes { get; set; }
 
-        AlquilerMaquinariaContext context; 
+        AlquilerMaquinariaContext context;
 
+        #region METODOS
         public ResponseModel<List<CLIENTE>> Listar()
         {
             context = new AlquilerMaquinariaContext();
@@ -199,5 +200,6 @@ namespace Model.Models
             }
             return response;
         }
+        #endregion
     }
 }

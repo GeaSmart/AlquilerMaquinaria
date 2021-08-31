@@ -18,5 +18,6 @@ namespace Model.DTO
         public int ciclo_horas_mtto { get; set; }
         public int horas_alquiler_defecto { get; set; }
         public decimal precio_dia_defecto { get; set; }
+        public string observaciones { get; set; }
     }
 }

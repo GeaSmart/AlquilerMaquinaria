@@ -32,11 +32,10 @@ namespace AlquilerMaquinaria.Mantenedores
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_completo_razon_social = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +47,7 @@ namespace AlquilerMaquinaria.Mantenedores
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Crear nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // dgvListado
             // 
@@ -56,19 +56,19 @@ namespace AlquilerMaquinaria.Mantenedores
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.tipo_documento,
-            this.numero_documento,
-            this.nombre_completo_razon_social,
-            this.celular,
-            this.direccion});
+            this.equipo,
+            this.marca,
+            this.modelo,
+            this.estado});
             this.dgvListado.Location = new System.Drawing.Point(12, 59);
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RowHeadersWidth = 51;
             this.dgvListado.RowTemplate.Height = 24;
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListado.Size = new System.Drawing.Size(1141, 617);
+            this.dgvListado.Size = new System.Drawing.Size(769, 617);
             this.dgvListado.TabIndex = 2;
+            this.dgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellDoubleClick);
             // 
             // id
             // 
@@ -77,67 +77,57 @@ namespace AlquilerMaquinaria.Mantenedores
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Visible = false;
             this.id.Width = 125;
             // 
-            // tipo_documento
+            // equipo
             // 
-            this.tipo_documento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.tipo_documento.DataPropertyName = "tipo_documento";
-            this.tipo_documento.HeaderText = "Tipo Documento";
-            this.tipo_documento.MinimumWidth = 6;
-            this.tipo_documento.Name = "tipo_documento";
-            this.tipo_documento.ReadOnly = true;
-            this.tipo_documento.Width = 129;
+            this.equipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.equipo.DataPropertyName = "equipo";
+            this.equipo.HeaderText = "Equipo";
+            this.equipo.MinimumWidth = 6;
+            this.equipo.Name = "equipo";
+            this.equipo.ReadOnly = true;
+            this.equipo.Width = 81;
             // 
-            // numero_documento
+            // marca
             // 
-            this.numero_documento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.numero_documento.DataPropertyName = "numero_documento";
-            this.numero_documento.HeaderText = "Numero de documento";
-            this.numero_documento.MinimumWidth = 6;
-            this.numero_documento.Name = "numero_documento";
-            this.numero_documento.ReadOnly = true;
-            this.numero_documento.Width = 165;
+            this.marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.marca.DataPropertyName = "marca";
+            this.marca.HeaderText = "Marca";
+            this.marca.MinimumWidth = 6;
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            this.marca.Width = 76;
             // 
-            // nombre_completo_razon_social
+            // modelo
             // 
-            this.nombre_completo_razon_social.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nombre_completo_razon_social.DataPropertyName = "nombre_completo_razon_social";
-            this.nombre_completo_razon_social.HeaderText = "Nombre o Razón social";
-            this.nombre_completo_razon_social.MinimumWidth = 6;
-            this.nombre_completo_razon_social.Name = "nombre_completo_razon_social";
-            this.nombre_completo_razon_social.ReadOnly = true;
-            this.nombre_completo_razon_social.Width = 136;
+            this.modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.modelo.DataPropertyName = "modelo";
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.MinimumWidth = 6;
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
             // 
-            // celular
+            // estado
             // 
-            this.celular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.celular.DataPropertyName = "celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.MinimumWidth = 6;
-            this.celular.Name = "celular";
-            this.celular.ReadOnly = true;
-            this.celular.Width = 81;
-            // 
-            // direccion
-            // 
-            this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "Dirección";
-            this.direccion.MinimumWidth = 6;
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 81;
             // 
             // frmListaMaquinaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 689);
+            this.ClientSize = new System.Drawing.Size(803, 689);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvListado);
             this.Name = "frmListaMaquinaria";
-            this.Text = "frmListaMaquinaria";
+            this.Text = "Listado de Maquinaria";
+            this.Load += new System.EventHandler(this.frmListaMaquinaria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.ResumeLayout(false);
 
@@ -148,10 +138,9 @@ namespace AlquilerMaquinaria.Mantenedores
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero_documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_completo_razon_social;
-        private System.Windows.Forms.DataGridViewTextBoxColumn celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

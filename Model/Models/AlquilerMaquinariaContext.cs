@@ -122,6 +122,10 @@ namespace Model.Models
                 .HasPrecision(10, 2);
 
             modelBuilder.Entity<MAQUINARIA>()
+                .Property(e => e.observaciones)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MAQUINARIA>()
                 .HasMany(e => e.DETALLE_CONTRATO)
                 .WithRequired(e => e.MAQUINARIA)
                 .HasForeignKey(e => e.idMaquinaria)

@@ -40,12 +40,19 @@ namespace AlquilerMaquinaria.Mantenedores
         {
             frmCliente formulario = new frmCliente();
             formulario.ShowDialog();
+            actualizarGrilla();
         }
 
         private void actualizarGrilla()
         {
             ResponseModel<List<CLIENTE>> response = model.Listar();
             this.dgvListado.DataSource = Mapper.Map<List<ListadoClienteDTO>>(response.data);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmListaMaquinaria form = new frmListaMaquinaria();
+            form.Show();
         }
     }
 }
