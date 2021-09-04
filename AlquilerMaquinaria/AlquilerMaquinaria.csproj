@@ -107,6 +107,18 @@
     <Compile Include="Mantenedores\frmMaquinaria.Designer.cs">
       <DependentUpon>frmMaquinaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operaciones\frmAgregarMaquinaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\frmAgregarMaquinaria.Designer.cs">
+      <DependentUpon>frmAgregarMaquinaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\frmAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\frmAlquiler.Designer.cs">
+      <DependentUpon>frmAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -123,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\frmMaquinaria.resx">
       <DependentUpon>frmMaquinaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\frmAlquiler.resx">
+      <DependentUpon>frmAlquiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,7 +168,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Operaciones\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

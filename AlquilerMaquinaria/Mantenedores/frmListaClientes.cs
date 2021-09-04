@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using AlquilerMaquinaria.Operaciones;
+using AutoMapper;
 using Model.DTO;
 using Model.Models;
 using Model.Shared;
@@ -53,6 +54,12 @@ namespace AlquilerMaquinaria.Mantenedores
         {
             frmListaMaquinaria form = new frmListaMaquinaria();
             form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmAlquiler form = new frmAlquiler();
+            form.ShowDialog();
         }
     }
 }
