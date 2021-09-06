@@ -49,17 +49,5 @@ namespace AlquilerMaquinaria.Mantenedores
             ResponseModel<List<CLIENTE>> response = model.Listar();
             this.dgvListado.DataSource = Mapper.Map<List<ListadoClienteDTO>>(response.data);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmListaMaquinaria form = new frmListaMaquinaria();
-            form.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            frmAlquiler form = new frmAlquiler();
-            form.ShowDialog();
-        }
     }
 }

@@ -32,7 +32,17 @@ namespace AlquilerMaquinaria.Mantenedores
             this.btnEliminar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nudPrecioDia = new System.Windows.Forms.NumericUpDown();
+            this.nudHorasAlquiler = new System.Windows.Forms.NumericUpDown();
+            this.nudCicloMtto = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,23 +56,12 @@ namespace AlquilerMaquinaria.Mantenedores
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.nudCicloMtto = new System.Windows.Forms.NumericUpDown();
-            this.nudHorasAlquiler = new System.Windows.Forms.NumericUpDown();
-            this.nudPrecioDia = new System.Windows.Forms.NumericUpDown();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCicloMtto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHorasAlquiler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioDia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHorasAlquiler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCicloMtto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -78,7 +77,6 @@ namespace AlquilerMaquinaria.Mantenedores
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -119,6 +117,98 @@ namespace AlquilerMaquinaria.Mantenedores
             this.tabPage1.Text = "Información";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label13.Location = new System.Drawing.Point(269, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 17);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "(valor por defecto)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label12.Location = new System.Drawing.Point(269, 236);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(125, 17);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "(valor por defecto)";
+            // 
+            // nudPrecioDia
+            // 
+            this.nudPrecioDia.DecimalPlaces = 2;
+            this.nudPrecioDia.Location = new System.Drawing.Point(144, 264);
+            this.nudPrecioDia.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nudPrecioDia.Name = "nudPrecioDia";
+            this.nudPrecioDia.Size = new System.Drawing.Size(120, 22);
+            this.nudPrecioDia.TabIndex = 25;
+            // 
+            // nudHorasAlquiler
+            // 
+            this.nudHorasAlquiler.Location = new System.Drawing.Point(144, 234);
+            this.nudHorasAlquiler.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nudHorasAlquiler.Name = "nudHorasAlquiler";
+            this.nudHorasAlquiler.Size = new System.Drawing.Size(120, 22);
+            this.nudHorasAlquiler.TabIndex = 24;
+            // 
+            // nudCicloMtto
+            // 
+            this.nudCicloMtto.Location = new System.Drawing.Point(144, 206);
+            this.nudCicloMtto.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nudCicloMtto.Name = "nudCicloMtto";
+            this.nudCicloMtto.Size = new System.Drawing.Size(120, 22);
+            this.nudCicloMtto.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Precio por dia";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(48, 236);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 17);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Hrs.alquiler";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(59, 208);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 17);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Ciclo mtto";
+            // 
+            // dtpFechaCompra
+            // 
+            this.dtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCompra.Location = new System.Drawing.Point(144, 177);
+            this.dtpFechaCompra.Name = "dtpFechaCompra";
+            this.dtpFechaCompra.Size = new System.Drawing.Size(115, 22);
+            this.dtpFechaCompra.TabIndex = 17;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -128,6 +218,14 @@ namespace AlquilerMaquinaria.Mantenedores
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             this.label1.Visible = false;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(144, 292);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(411, 52);
+            this.txtObservaciones.TabIndex = 16;
             // 
             // label8
             // 
@@ -236,16 +334,6 @@ namespace AlquilerMaquinaria.Mantenedores
             this.txtMarca.Size = new System.Drawing.Size(274, 22);
             this.txtMarca.TabIndex = 8;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(594, 424);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Archivos adjuntos";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(523, 471);
@@ -255,106 +343,6 @@ namespace AlquilerMaquinaria.Mantenedores
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dtpFechaCompra
-            // 
-            this.dtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCompra.Location = new System.Drawing.Point(144, 177);
-            this.dtpFechaCompra.Name = "dtpFechaCompra";
-            this.dtpFechaCompra.Size = new System.Drawing.Size(115, 22);
-            this.dtpFechaCompra.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 266);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 17);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Precio por dia";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(48, 236);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 17);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Hrs.alquiler";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(59, 208);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 17);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Ciclo mtto";
-            // 
-            // nudCicloMtto
-            // 
-            this.nudCicloMtto.Location = new System.Drawing.Point(144, 206);
-            this.nudCicloMtto.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nudCicloMtto.Name = "nudCicloMtto";
-            this.nudCicloMtto.Size = new System.Drawing.Size(120, 22);
-            this.nudCicloMtto.TabIndex = 23;
-            // 
-            // nudHorasAlquiler
-            // 
-            this.nudHorasAlquiler.Location = new System.Drawing.Point(144, 234);
-            this.nudHorasAlquiler.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nudHorasAlquiler.Name = "nudHorasAlquiler";
-            this.nudHorasAlquiler.Size = new System.Drawing.Size(120, 22);
-            this.nudHorasAlquiler.TabIndex = 24;
-            // 
-            // nudPrecioDia
-            // 
-            this.nudPrecioDia.DecimalPlaces = 2;
-            this.nudPrecioDia.Location = new System.Drawing.Point(144, 264);
-            this.nudPrecioDia.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nudPrecioDia.Name = "nudPrecioDia";
-            this.nudPrecioDia.Size = new System.Drawing.Size(120, 22);
-            this.nudPrecioDia.TabIndex = 25;
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(144, 292);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(411, 52);
-            this.txtObservaciones.TabIndex = 16;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label12.Location = new System.Drawing.Point(269, 236);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(125, 17);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "(valor por defecto)";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label13.Location = new System.Drawing.Point(269, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 17);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "(valor por defecto)";
             // 
             // frmMaquinaria
             // 
@@ -370,9 +358,9 @@ namespace AlquilerMaquinaria.Mantenedores
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCicloMtto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHorasAlquiler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioDia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHorasAlquiler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCicloMtto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +392,6 @@ namespace AlquilerMaquinaria.Mantenedores
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

@@ -51,5 +51,10 @@ namespace AlquilerMaquinaria.Operaciones
             frmAgregarMaquinaria form = new frmAgregarMaquinaria(ref detalles);
             form.ShowDialog();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

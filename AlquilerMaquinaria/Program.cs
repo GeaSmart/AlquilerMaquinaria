@@ -23,7 +23,7 @@ namespace AlquilerMaquinaria
             //configuracion de automapper
             AutomapperConfiguration.Configure();
 
-            Application.Run(new Mantenedores.frmListaClientes());
+            Application.Run(new frmPrincipal());
         }
     }
 }
