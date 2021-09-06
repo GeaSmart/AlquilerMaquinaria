@@ -44,5 +44,12 @@ namespace AlquilerMaquinaria.Operaciones
             this.cmbCliente.ValueMember = "id";
             this.cmbCliente.DisplayMember = "nombres_razonsocial";
         }
+
+        List<DETALLE_CONTRATO> detalles = new List<DETALLE_CONTRATO>();
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarMaquinaria form = new frmAgregarMaquinaria(ref detalles);
+            form.ShowDialog();
+        }
     }
 }

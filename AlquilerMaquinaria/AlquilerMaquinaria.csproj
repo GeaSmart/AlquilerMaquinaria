@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Mantenedores\frmMaquinaria.resx">
       <DependentUpon>frmMaquinaria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\frmAgregarMaquinaria.resx">
+      <DependentUpon>frmAgregarMaquinaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\frmAlquiler.resx">
       <DependentUpon>frmAlquiler.cs</DependentUpon>
     </EmbeddedResource>
